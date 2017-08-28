@@ -5,9 +5,8 @@
 //  Created by Run on 2017/8/28.
 //  Copyright © 2017年 Run. All rights reserved.
 //
+#import "ZRBaseViewController.h"
 
-#import <UIKit/UIKit.h>
-
-@interface ZRFallenLeavesViewController : UIViewController
+@interface ZRFallenLeavesViewController : ZRBaseViewController
 
 @end
