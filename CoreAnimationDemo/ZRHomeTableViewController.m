@@ -58,6 +58,7 @@
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"CAKeyframeAnimation" viewControllerName:@"ZRKeyframeAnimationViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"DrawLayer" viewControllerName:@"ZRDrawLayerViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"ZRFallenLeavesViewController" viewControllerName:@"ZRFallenLeavesViewController"]];
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"ZRPhotoBrowserViewController" viewControllerName:@"ZRPhotoBrowserViewController"]];
     _items = items;
 }
 

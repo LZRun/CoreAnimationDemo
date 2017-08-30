@@ -23,6 +23,7 @@
 		27B2F0101F3BF2DB00B3C925 /* ZREmitterLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2F00F1F3BF2DB00B3C925 /* ZREmitterLayerViewController.m */; };
 		27E08C261F53ED1D00DC4ECF /* ZRDrawLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E08C251F53ED1D00DC4ECF /* ZRDrawLayerViewController.m */; };
 		27E08C301F53FEC600DC4ECF /* UIView+GKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E08C2F1F53FEC600DC4ECF /* UIView+GKExtension.m */; };
+		27EE89F51F55603900137DB8 /* ZRPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27EE89F41F55603900137DB8 /* ZRPhotoBrowserViewController.m */; };
 		A70927481F545CD1007C85A5 /* ZRFallenLeavesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70927471F545CD1007C85A5 /* ZRFallenLeavesViewController.m */; };
 		A709274B1F545CE0007C85A5 /* ZRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A709274A1F545CE0007C85A5 /* ZRBaseViewController.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,8 @@
 		27E08C2E1F53FEC600DC4ECF /* UIView+GKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GKExtension.h"; sourceTree = "<group>"; };
 		27E08C2F1F53FEC600DC4ECF /* UIView+GKExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GKExtension.m"; sourceTree = "<group>"; };
 		27E08C311F53FEEE00DC4ECF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		27EE89F31F55603900137DB8 /* ZRPhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		27EE89F41F55603900137DB8 /* ZRPhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		A70927461F545CD1007C85A5 /* ZRFallenLeavesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRFallenLeavesViewController.h; sourceTree = "<group>"; };
 		A70927471F545CD1007C85A5 /* ZRFallenLeavesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRFallenLeavesViewController.m; sourceTree = "<group>"; };
 		A70927491F545CE0007C85A5 /* ZRBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRBaseViewController.h; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 			children = (
 				A70927461F545CD1007C85A5 /* ZRFallenLeavesViewController.h */,
 				A70927471F545CD1007C85A5 /* ZRFallenLeavesViewController.m */,
+				27EE89F31F55603900137DB8 /* ZRPhotoBrowserViewController.h */,
+				27EE89F41F55603900137DB8 /* ZRPhotoBrowserViewController.m */,
 			);
 			path = FallenLeavesAnimation;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 			files = (
 				2755218E1F3D44130010C5A0 /* ZRBasicAnimationViewController.m in Sources */,
 				27E08C261F53ED1D00DC4ECF /* ZRDrawLayerViewController.m in Sources */,
+				27EE89F51F55603900137DB8 /* ZRPhotoBrowserViewController.m in Sources */,
 				27E08C301F53FEC600DC4ECF /* UIView+GKExtension.m in Sources */,
 				2752FFAB1F4129BD00F8AA8E /* ZRKeyframeAnimationViewController.m in Sources */,
 				27B2F0101F3BF2DB00B3C925 /* ZREmitterLayerViewController.m in Sources */,
