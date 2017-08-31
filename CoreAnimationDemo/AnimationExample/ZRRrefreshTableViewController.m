@@ -97,7 +97,10 @@
     write2.toValue   = @1;
     write2.fillMode = kCAFillModeBoth;
     write2.removedOnCompletion = NO;
-    write2.duration = 0.4;
+    write2.repeatCount = HUGE_VALF;
+    write2.duration = 3;
+    write2.beginTime = CACurrentMediaTime() + 0.5;
+    write2.autoreverses = YES;
     return write2;
 }
 
@@ -149,7 +152,14 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
+    if (-(scrollView.contentInset.top + scrollView.contentOffset.y) >= REFRESHING_MIN && !_isRefresh) {
+        __weak typeof (self) weakSelf = self;
+        [self startRefreshing:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf endRefresh];
+            });
+        }];
+    }
 }
 #pragma mark - path
 - (CGPathRef)pullToRefreshPath{

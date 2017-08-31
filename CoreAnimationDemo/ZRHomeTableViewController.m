@@ -61,6 +61,7 @@
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"ZRPhotoBrowserViewController" viewControllerName:@"ZRPhotoBrowserViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"UIView动画" viewControllerName:@"ZRUIViewAnimationViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"弹簧动画" viewControllerName:@"ZRSpringAnimationViewController"]];
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"下拉刷新动画" viewControllerName:@"ZRRrefreshTableViewController"]];
     _items = items;
 }
 
