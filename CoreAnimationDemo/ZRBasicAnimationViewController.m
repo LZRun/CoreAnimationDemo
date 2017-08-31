@@ -30,14 +30,16 @@
 - (void)postitionBasicAnimation{
     
     CABasicAnimation *basciAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+    basciAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.view.frame.size.width - 50,self.view.frame.size.height - 50)];
     basciAnimation.removedOnCompletion = NO;
     //basciAnimation.fillMode = kCAFillModeForwards;
-    basciAnimation.duration = 3;
-    basciAnimation.repeatCount = 1;
     basciAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    basciAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.view.frame.size.width - 50,self.view.frame.size.height - 50)];
-    //basciAnimation.speed = 3;
     basciAnimation.delegate = self;
+    basciAnimation.timeOffset = 1;//CACurrentMediaTime() + 1;
+    basciAnimation.duration = 3;
+    //basciAnimation.repeatCount = 1;
+    //basciAnimation.repeatDuration = 6;
+    //basciAnimation.speed = 3;
     [basciAnimation setValue:basciAnimation.toValue forKey:@"animationKey"];
     [animationView.layer addAnimation:basciAnimation forKey:nil];
 }
