@@ -59,6 +59,8 @@
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"DrawLayer" viewControllerName:@"ZRDrawLayerViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"ZRFallenLeavesViewController" viewControllerName:@"ZRFallenLeavesViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"ZRPhotoBrowserViewController" viewControllerName:@"ZRPhotoBrowserViewController"]];
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"UIView动画" viewControllerName:@"ZRUIViewAnimationViewController"]];
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"弹簧动画" viewControllerName:@"ZRSpringAnimationViewController"]];
     _items = items;
 }
 
