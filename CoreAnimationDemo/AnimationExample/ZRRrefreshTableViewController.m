@@ -7,7 +7,7 @@
 //
 
 #import "ZRRrefreshTableViewController.h"
-#define REFRESHING_MIN 60
+#define REFRESHING_MIN 60.f
 @interface ZRRrefreshTableViewController (){
     //原始contentInset.top
     CGFloat contentInsetTop;
@@ -36,19 +36,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     //刷新初始化(刷新状态,刷新视图)
     _isRefresh = NO;
     [self setUpLoadingIndicator];
     //添加下拉动画
     [_pullToRefreshShapeLayer addAnimation:[self pushToRerefreshAnimation] forKey:@"pullWriteWordKey"];
     //主动刷新一次
-    __weak typeof (self) weakSelf = self;
-    [self startRefreshing:^{
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf endRefresh];
-        });
-    }];
+//    __weak typeof (self) weakSelf = self;
+//    [self startRefreshing:^{
+//
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf endRefresh];
+//        });
+//    }];
     
 }
 
@@ -74,6 +75,7 @@
         [_loadingIndicator.layer addSublayer:layer];
     }
     _pullToRefreshShapeLayer.speed = 0;
+
 }
 
 #pragma mark - animation
@@ -98,9 +100,9 @@
     write2.fillMode = kCAFillModeBoth;
     write2.removedOnCompletion = NO;
     write2.repeatCount = HUGE_VALF;
-    write2.duration = 3;
+    write2.duration = 1.5;
     write2.beginTime = CACurrentMediaTime() + 0.5;
-    write2.autoreverses = YES;
+    //write2.autoreverses = YES;
     return write2;
 }
 
@@ -108,7 +110,9 @@
 - (void)endRefresh{
     _pullToRefreshShapeLayer.timeOffset = 0;
     [_loadingShapeLayer removeAllAnimations];
-    self.tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0);
+    [UIView animateWithDuration:.3 animations:^{
+       self.tableView.contentInset = UIEdgeInsetsMake(contentInsetTop, 0, 0, 0);
+    }];
     _isRefresh = NO;
 }
 - (void)startRefreshing: (void(^)())handler{
@@ -141,14 +145,16 @@
  return cell;
  }
  */
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat offsetY = scrollView.contentOffset.y + scrollView.contentInset.top;
-    if (offsetY < 0 && !_isRefresh) {
-        CGFloat fractionDragged = - offsetY / REFRESHING_MIN;
-        fractionDragged = MIN(fractionDragged, 1);
-        _pullToRefreshShapeLayer.timeOffset = fractionDragged;
-    }
+   // if (scrollView.isDragging) {
+        CGFloat offsetY = scrollView.contentOffset.y + scrollView.contentInset.top;
+        if (offsetY <= 0 && !_isRefresh && [self isViewLoaded]) {
+            CGFloat fractionDragged = - offsetY / REFRESHING_MIN;
+            NSLog(@"offsetY : %f,fractionDragged : %f",offsetY,fractionDragged);
+            fractionDragged = MIN(fractionDragged, 1);
+            _pullToRefreshShapeLayer.timeOffset = fractionDragged;
+        }
+    //}
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -161,6 +167,7 @@
         }];
     }
 }
+
 #pragma mark - path
 - (CGPathRef)pullToRefreshPath{
     CGMutablePathRef path = CGPathCreateMutable();
