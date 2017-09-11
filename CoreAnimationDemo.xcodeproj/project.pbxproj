@@ -14,6 +14,8 @@
 		276C8C4E1F57B068006AE99B /* ZRSpringAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C8C4C1F57B068006AE99B /* ZRSpringAnimationViewController.m */; };
 		276C8C4F1F57B068006AE99B /* ZRSpringAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276C8C4D1F57B068006AE99B /* ZRSpringAnimationViewController.xib */; };
 		276C8C531F57F1CF006AE99B /* ZRRrefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C8C511F57F1CF006AE99B /* ZRRrefreshTableViewController.m */; };
+		278AD6681F668E3B00627E14 /* ZRLoadingHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 278AD6671F668E3B00627E14 /* ZRLoadingHUDViewController.m */; };
+		278AD66B1F668ECD00627E14 /* ZRLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 278AD66A1F668ECD00627E14 /* ZRLoadingHUD.m */; };
 		27B2EFC91F3BE2B900B3C925 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2EFC81F3BE2B900B3C925 /* main.m */; };
 		27B2EFCC1F3BE2BA00B3C925 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2EFCB1F3BE2BA00B3C925 /* AppDelegate.m */; };
 		27B2EFD21F3BE2BA00B3C925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B2EFD01F3BE2BA00B3C925 /* Main.storyboard */; };
@@ -63,6 +65,10 @@
 		276C8C4D1F57B068006AE99B /* ZRSpringAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZRSpringAnimationViewController.xib; sourceTree = "<group>"; };
 		276C8C501F57F1CF006AE99B /* ZRRrefreshTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRRrefreshTableViewController.h; sourceTree = "<group>"; };
 		276C8C511F57F1CF006AE99B /* ZRRrefreshTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRRrefreshTableViewController.m; sourceTree = "<group>"; };
+		278AD6661F668E3B00627E14 /* ZRLoadingHUDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRLoadingHUDViewController.h; sourceTree = "<group>"; };
+		278AD6671F668E3B00627E14 /* ZRLoadingHUDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRLoadingHUDViewController.m; sourceTree = "<group>"; };
+		278AD6691F668ECD00627E14 /* ZRLoadingHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRLoadingHUD.h; sourceTree = "<group>"; };
+		278AD66A1F668ECD00627E14 /* ZRLoadingHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRLoadingHUD.m; sourceTree = "<group>"; };
 		27B2EFC41F3BE2B900B3C925 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B2EFC81F3BE2B900B3C925 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27B2EFCA1F3BE2BA00B3C925 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -255,11 +261,15 @@
 		A70927441F545CA7007C85A5 /* AnimationExample */ = {
 			isa = PBXGroup;
 			children = (
+				A70927451F545CA7007C85A5 /* FallenLeavesAnimation */,
 				276C8C441F57A2FC006AE99B /* ZRPhotoBrowserViewController.h */,
 				276C8C431F57A2FC006AE99B /* ZRPhotoBrowserViewController.m */,
-				A70927451F545CA7007C85A5 /* FallenLeavesAnimation */,
 				276C8C501F57F1CF006AE99B /* ZRRrefreshTableViewController.h */,
 				276C8C511F57F1CF006AE99B /* ZRRrefreshTableViewController.m */,
+				278AD6661F668E3B00627E14 /* ZRLoadingHUDViewController.h */,
+				278AD6671F668E3B00627E14 /* ZRLoadingHUDViewController.m */,
+				278AD6691F668ECD00627E14 /* ZRLoadingHUD.h */,
+				278AD66A1F668ECD00627E14 /* ZRLoadingHUD.m */,
 			);
 			path = AnimationExample;
 			sourceTree = "<group>";
@@ -418,6 +428,8 @@
 				2755218E1F3D44130010C5A0 /* ZRBasicAnimationViewController.m in Sources */,
 				27E08C261F53ED1D00DC4ECF /* ZRDrawLayerViewController.m in Sources */,
 				276C8C531F57F1CF006AE99B /* ZRRrefreshTableViewController.m in Sources */,
+				278AD6681F668E3B00627E14 /* ZRLoadingHUDViewController.m in Sources */,
+				278AD66B1F668ECD00627E14 /* ZRLoadingHUD.m in Sources */,
 				276C8C451F57A2FC006AE99B /* ZRPhotoBrowserViewController.m in Sources */,
 				27E08C301F53FEC600DC4ECF /* UIView+GKExtension.m in Sources */,
 				276C8C491F57A43D006AE99B /* ZRUIViewAnimationViewController.m in Sources */,
