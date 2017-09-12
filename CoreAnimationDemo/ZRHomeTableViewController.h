@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZRHomeItem.h"
 
 @interface ZRHomeTableViewController : UITableViewController
-
+/**
+ 注释
+ */
+@property (nonatomic,strong) NSArray<ZRHomeItem *> *items;
+- (void)configData;
 @end

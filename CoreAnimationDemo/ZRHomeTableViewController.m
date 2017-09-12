@@ -8,38 +8,9 @@
 
 #import "ZRHomeTableViewController.h"
 
-@interface ZRHomeItem : NSObject
-/**
- 注释
- */
-@property (nonatomic,copy) NSString *title;
-/**
- 注释
- */
-@property (nonatomic,copy) NSString *viewControllerName;
-- (instancetype)initWithTitle: (NSString *)title viewControllerName: (NSString *)viewControllerName;
-
-@end
-
-@implementation ZRHomeItem
-
-- (instancetype)initWithTitle: (NSString *)title viewControllerName: (NSString *)viewControllerName{
-
-    self = [super init];
-    if (self) {
-        _title = title;
-        _viewControllerName = viewControllerName;
-    }
-    return self;
-}
-
-@end
-
+static NSString *cellID = @"HomeTaleViewCellIdentifier";
 @interface ZRHomeTableViewController ()
-/**
- 注释
- */
-@property (nonatomic,strong) NSArray<ZRHomeItem *> *items;
+
 
 @end
 
@@ -51,7 +22,11 @@
      self.clearsSelectionOnViewWillAppear = YES;
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.tableFooterView = [[UIView alloc]init];
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    [self configData];
+}
+
+- (void)configData{
     NSMutableArray *items = [NSMutableArray array];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"CAEmitterLayer" viewControllerName:@"ZREmitterLayerViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"CABasicAnimation" viewControllerName:@"ZRBasicAnimationViewController"]];
@@ -62,9 +37,9 @@
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"UIView动画" viewControllerName:@"ZRUIViewAnimationViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"弹簧动画" viewControllerName:@"ZRSpringAnimationViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"下拉刷新动画" viewControllerName:@"ZRRrefreshTableViewController"]];
-    _items = items;
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"动画应用1" viewControllerName:@"ZRAnimationExample1TableViewController"]];
+    self.items = items;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,7 +53,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeTaleViewCellIdentifier"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     cell.textLabel.text = _items[indexPath.row].title;
     return cell;
 }
