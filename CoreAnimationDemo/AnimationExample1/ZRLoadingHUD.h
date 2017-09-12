@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZRLoadingHUD : UIView
+@interface ZRLoadingHUD : UIView{
+    BOOL isPlay;
+}
+
+@property (nonatomic) CGFloat progress;
+@property (nonatomic,copy) void(^playOrSuspendHandler)(BOOL isPlay);
 
 @end
