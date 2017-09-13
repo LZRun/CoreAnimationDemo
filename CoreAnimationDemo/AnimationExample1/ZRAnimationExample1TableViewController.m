@@ -22,6 +22,7 @@
     NSMutableArray *items = [NSMutableArray array];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"GIF" viewControllerName:@"ZRGIFViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"LoadingHUD" viewControllerName:@"ZRLoadingHUDViewController"]];
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"WaveLoading" viewControllerName:@"ZRWaveLoadingViewController"]];
     self.items = items;
 }
 @end
