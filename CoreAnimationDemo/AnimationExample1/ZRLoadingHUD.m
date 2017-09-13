@@ -8,17 +8,36 @@
 
 #import "ZRLoadingHUD.h"
 
+@interface ZRLoadingHUD ()
+
+@property (nonatomic,strong) CADisplayLink *displayLink;
+@property (nonatomic,strong) UIColor *smallRoundedfillColor;
+@property (nonatomic,strong) UIColor *minRoundedfileColor;
+@property (nonatomic) CGFloat currentProgress;
+@end
+
 @implementation ZRLoadingHUD
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor blackColor];
-        self.progress = 0;
+        _progress = self.currentProgress = 0;
         isPlay = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(playOrSuspendTapeGestureAction)];
         [self addGestureRecognizer:tapGesture];
+        
+        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(reloadView)];
+        [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     }
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview{
+    [super willMoveToSuperview:newSuperview];
+    if (!newSuperview) {
+        //销毁
+        [_displayLink invalidate];
+    }
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -30,16 +49,15 @@
     [[UIColor whiteColor] setFill];
     [[UIColor whiteColor] setStroke];
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(width / 2 - bigRadius, height / 2 - bigRadius, bigRadius * 2, bigRadius * 2) cornerRadius:bigRadius];
-    [path stroke];
     [path fill];
     
-    [[UIColor blackColor] setFill];
+    [_smallRoundedfillColor setFill];
     UIBezierPath *path1 = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(width / 2 - smallRadius, height / 2 - smallRadius, smallRadius * 2, smallRadius * 2) cornerRadius:smallRadius];
     [path1 stroke];
     [path1 fill];
     
     if (!isPlay) {
-        [[UIColor whiteColor] setFill];
+        [_minRoundedfileColor setFill];
         CGFloat minimumRadius = smallRadius / 3;
         CGPoint center = CGPointMake(width / 2, height / 2);
         CGFloat changeAngle = self.endAngle + M_PI_2;
@@ -63,10 +81,11 @@
         [path3 addLineToPoint:CGPointMake(path3.currentPoint.x, path3.currentPoint.y + lineHeight)];
         [path3 moveToPoint: CGPointMake(center.x + centerSpace, center.y - lineHeight / 2)];
         [path3 addLineToPoint:CGPointMake(path3.currentPoint.x, path3.currentPoint.y + lineHeight)];
-        [[UIColor whiteColor] setStroke];
+        [_minRoundedfileColor setStroke];
         [path3 stroke];
     }else{
-        [[UIColor whiteColor] setFill];
+        
+        [_minRoundedfileColor setFill];
         CGPoint center = CGPointMake(width / 2, height / 2);
         UIBezierPath *path2 = [UIBezierPath bezierPath];
         [path2 moveToPoint:center];
@@ -76,11 +95,20 @@
         [path2 stroke];
         [path2 fill];
     }
-    
+}
+                            
+- (void)reloadView{
+    if (_currentProgress >= _progress) {
+        _displayLink.paused = YES;
+        return;
+    }
+    self.currentProgress += 0.01;
+    [self setNeedsDisplay];
 }
 
 - (void)playOrSuspendTapeGestureAction{
     isPlay = !isPlay;
+    _displayLink.paused = !isPlay;
     if (_playOrSuspendHandler) {
         _playOrSuspendHandler(isPlay);
     }
@@ -88,15 +116,33 @@
 }
 
 - (CGFloat)endAngle{
-    return - M_PI_2 + M_PI * 2 * _progress;
+    //值为0~1之间，类似下载的处理
+    //- M_PI_2 + M_PI * 2 * _currentProgress;
+    //对于值可以无穷大，无限旋转,类似网络加载的处理
+    //double modf (double, double*); 将参数的整数部分通过指针回传, 返回小数部分
+    double integer;
+    CGFloat endAngle = - M_PI_2 + M_PI * 2 * modf(_currentProgress, &integer);//(_currentProgress - (NSInteger)(_currentProgress));
+    return endAngle;
+}
+
+- (void)setCurrentProgress:(CGFloat)currentProgress{
+    _currentProgress = currentProgress;
+    if ((NSInteger)currentProgress % 2 == 0) {
+        self.smallRoundedfillColor = [UIColor blackColor];
+        self.minRoundedfileColor = [UIColor whiteColor];
+    }else{
+        self.minRoundedfileColor = [UIColor blackColor];
+        self.smallRoundedfillColor = [UIColor whiteColor];
+    }
 }
 
 - (void)setProgress:(CGFloat)progress{
     if (_progress != progress) {
-        progress = MIN(MAX(progress, 0), 1);
+        //控制进度在0~1之间
+        //progress = MIN(MAX(progress, 0), 1);
         _progress = progress;
-        [self setNeedsDisplay];
+        _displayLink.paused = NO;
     }
-    
 }
+
 @end

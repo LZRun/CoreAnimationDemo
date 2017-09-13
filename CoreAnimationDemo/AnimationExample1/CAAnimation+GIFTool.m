@@ -28,6 +28,7 @@
         [delayTimes addObject:delayTime];
         totalTime += [delayTime floatValue];
     }
+    CFRelease(imageSource);
     
     //时间占比
     NSMutableArray *delayRates = [NSMutableArray array];//[NSMutableArray arrayWithObject:@0];

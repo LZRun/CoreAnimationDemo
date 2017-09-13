@@ -28,6 +28,7 @@
 		27B2F00C1F3BEF1F00B3C925 /* jiankangzhishu_icon_fen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B2F0091F3BEF1F00B3C925 /* jiankangzhishu_icon_fen@2x.png */; };
 		27B2F00D1F3BEF1F00B3C925 /* jiankangzhishu_icon_fen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B2F00A1F3BEF1F00B3C925 /* jiankangzhishu_icon_fen@3x.png */; };
 		27B2F0101F3BF2DB00B3C925 /* ZREmitterLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2F00F1F3BF2DB00B3C925 /* ZREmitterLayerViewController.m */; };
+		27C6F5A01F68DE1D00322663 /* ZRAnimationLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C6F59F1F68DE1D00322663 /* ZRAnimationLoadingHUD.m */; };
 		27E08C261F53ED1D00DC4ECF /* ZRDrawLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E08C251F53ED1D00DC4ECF /* ZRDrawLayerViewController.m */; };
 		27E08C301F53FEC600DC4ECF /* UIView+GKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E08C2F1F53FEC600DC4ECF /* UIView+GKExtension.m */; };
 		27F9B7281F678431008BE6A5 /* ZRLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F9B7251F678431008BE6A5 /* ZRLoadingHUD.m */; };
@@ -95,6 +96,8 @@
 		27B2F00A1F3BEF1F00B3C925 /* jiankangzhishu_icon_fen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jiankangzhishu_icon_fen@3x.png"; sourceTree = "<group>"; };
 		27B2F00E1F3BF2DB00B3C925 /* ZREmitterLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZREmitterLayerViewController.h; sourceTree = "<group>"; };
 		27B2F00F1F3BF2DB00B3C925 /* ZREmitterLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZREmitterLayerViewController.m; sourceTree = "<group>"; };
+		27C6F59E1F68DE1D00322663 /* ZRAnimationLoadingHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRAnimationLoadingHUD.h; sourceTree = "<group>"; };
+		27C6F59F1F68DE1D00322663 /* ZRAnimationLoadingHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRAnimationLoadingHUD.m; sourceTree = "<group>"; };
 		27E08C241F53ED1D00DC4ECF /* ZRDrawLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRDrawLayerViewController.h; sourceTree = "<group>"; };
 		27E08C251F53ED1D00DC4ECF /* ZRDrawLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRDrawLayerViewController.m; sourceTree = "<group>"; };
 		27E08C2E1F53FEC600DC4ECF /* UIView+GKExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GKExtension.h"; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				27F9B7381F678E81008BE6A5 /* ZRAnimationExample1TableViewController.m */,
 				27F9B7241F678431008BE6A5 /* ZRLoadingHUD.h */,
 				27F9B7251F678431008BE6A5 /* ZRLoadingHUD.m */,
+				27C6F59E1F68DE1D00322663 /* ZRAnimationLoadingHUD.h */,
+				27C6F59F1F68DE1D00322663 /* ZRAnimationLoadingHUD.m */,
 				27F9B7261F678431008BE6A5 /* ZRLoadingHUDViewController.h */,
 				27F9B7271F678431008BE6A5 /* ZRLoadingHUDViewController.m */,
 				27F9B7321F678C2F008BE6A5 /* ZRGIFViewController.h */,
@@ -474,6 +479,7 @@
 				276C8C491F57A43D006AE99B /* ZRUIViewAnimationViewController.m in Sources */,
 				2752FFAB1F4129BD00F8AA8E /* ZRKeyframeAnimationViewController.m in Sources */,
 				27B2F0101F3BF2DB00B3C925 /* ZREmitterLayerViewController.m in Sources */,
+				27C6F5A01F68DE1D00322663 /* ZRAnimationLoadingHUD.m in Sources */,
 				27F9B7351F678C2F008BE6A5 /* ZRGIFViewController.m in Sources */,
 				276C8C4E1F57B068006AE99B /* ZRSpringAnimationViewController.m in Sources */,
 				A70927481F545CD1007C85A5 /* ZRFallenLeavesViewController.m in Sources */,
