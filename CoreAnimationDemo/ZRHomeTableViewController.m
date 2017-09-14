@@ -38,6 +38,7 @@ static NSString *cellID = @"HomeTaleViewCellIdentifier";
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"弹簧动画" viewControllerName:@"ZRSpringAnimationViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"下拉刷新动画" viewControllerName:@"ZRRrefreshTableViewController"]];
     [items addObject:[[ZRHomeItem alloc] initWithTitle:@"动画应用1" viewControllerName:@"ZRAnimationExample1TableViewController"]];
+    [items addObject:[[ZRHomeItem alloc] initWithTitle:@"bezierPath" viewControllerName:@"ZRBezierPathViewController"]];
     self.items = items;
 }
 - (void)didReceiveMemoryWarning {
