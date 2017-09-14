@@ -10,4 +10,6 @@
 
 @interface ZRWaveLoadingView : UIView
 
+@property (nonatomic) CGFloat progress;
+
 @end
