@@ -16,6 +16,8 @@
 		276C8C4E1F57B068006AE99B /* ZRSpringAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C8C4C1F57B068006AE99B /* ZRSpringAnimationViewController.m */; };
 		276C8C4F1F57B068006AE99B /* ZRSpringAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276C8C4D1F57B068006AE99B /* ZRSpringAnimationViewController.xib */; };
 		276C8C531F57F1CF006AE99B /* ZRRrefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C8C511F57F1CF006AE99B /* ZRRrefreshTableViewController.m */; };
+		27867FA21F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27867FA11F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.m */; };
+		27867FA51F710F2C00B8EB67 /* ZRMultipleWavePathMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 27867FA41F710F2C00B8EB67 /* ZRMultipleWavePathMaker.m */; };
 		27B2EFC91F3BE2B900B3C925 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2EFC81F3BE2B900B3C925 /* main.m */; };
 		27B2EFCC1F3BE2BA00B3C925 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B2EFCB1F3BE2BA00B3C925 /* AppDelegate.m */; };
 		27B2EFD21F3BE2BA00B3C925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B2EFD01F3BE2BA00B3C925 /* Main.storyboard */; };
@@ -80,6 +82,10 @@
 		276C8C4D1F57B068006AE99B /* ZRSpringAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZRSpringAnimationViewController.xib; sourceTree = "<group>"; };
 		276C8C501F57F1CF006AE99B /* ZRRrefreshTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRRrefreshTableViewController.h; sourceTree = "<group>"; };
 		276C8C511F57F1CF006AE99B /* ZRRrefreshTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRRrefreshTableViewController.m; sourceTree = "<group>"; };
+		27867FA01F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRMultipleWaveLoadingView.h; sourceTree = "<group>"; };
+		27867FA11F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRMultipleWaveLoadingView.m; sourceTree = "<group>"; };
+		27867FA31F710F2C00B8EB67 /* ZRMultipleWavePathMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZRMultipleWavePathMaker.h; sourceTree = "<group>"; };
+		27867FA41F710F2C00B8EB67 /* ZRMultipleWavePathMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZRMultipleWavePathMaker.m; sourceTree = "<group>"; };
 		27B2EFC41F3BE2B900B3C925 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B2EFC81F3BE2B900B3C925 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		27B2EFCA1F3BE2BA00B3C925 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -289,6 +295,17 @@
 			name = CAEmitterLayer;
 			sourceTree = "<group>";
 		};
+		27C369211F71085E000F148C /* ZRMultipleWaveLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				27867FA01F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.h */,
+				27867FA11F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.m */,
+				27867FA31F710F2C00B8EB67 /* ZRMultipleWavePathMaker.h */,
+				27867FA41F710F2C00B8EB67 /* ZRMultipleWavePathMaker.m */,
+			);
+			path = ZRMultipleWaveLoadingView;
+			sourceTree = "<group>";
+		};
 		27E08C201F53EA2C00DC4ECF /* CALayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +337,7 @@
 				A748A8E51F695C0E007DFB1D /* ZRWaveLoadingViewController.m */,
 				A748A8E71F695C8A007DFB1D /* ZRWaveLoadingView.h */,
 				A748A8E81F695C8A007DFB1D /* ZRWaveLoadingView.m */,
+				27C369211F71085E000F148C /* ZRMultipleWaveLoadingView */,
 			);
 			path = AnimationExample1;
 			sourceTree = "<group>";
@@ -515,6 +533,7 @@
 				A7F7641C1F6AC20F00769DB7 /* ZRBezierQuadCurveView.m in Sources */,
 				2752FFAB1F4129BD00F8AA8E /* ZRKeyframeAnimationViewController.m in Sources */,
 				27B2F0101F3BF2DB00B3C925 /* ZREmitterLayerViewController.m in Sources */,
+				27867FA51F710F2C00B8EB67 /* ZRMultipleWavePathMaker.m in Sources */,
 				27C6F5A01F68DE1D00322663 /* ZRAnimationLoadingHUD.m in Sources */,
 				27F9B7351F678C2F008BE6A5 /* ZRGIFViewController.m in Sources */,
 				A748A8E91F695C8A007DFB1D /* ZRWaveLoadingView.m in Sources */,
@@ -528,6 +547,7 @@
 				27F9B7391F678E81008BE6A5 /* ZRAnimationExample1TableViewController.m in Sources */,
 				A709274B1F545CE0007C85A5 /* ZRBaseViewController.m in Sources */,
 				27B2EFFD1F3BE48A00B3C925 /* ZRHomeTableViewController.m in Sources */,
+				27867FA21F710A3C00B8EB67 /* ZRMultipleWaveLoadingView.m in Sources */,
 				27B2EFC91F3BE2B900B3C925 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

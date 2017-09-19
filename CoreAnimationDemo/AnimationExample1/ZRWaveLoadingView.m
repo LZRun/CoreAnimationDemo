@@ -9,17 +9,16 @@
 #import "ZRWaveLoadingView.h"
 
 @interface ZRWaveLoadingView (){
-    //当前初相
+    ///当前初相
     CGFloat _initialPhase;
-    //当前偏距
+    ///当前偏距
     CGFloat _yOffset;
-    //振幅
+    ///振幅
     //CGFloat _amplitude;
 }
 
 @property (nonatomic,strong) CADisplayLink *displayLink;
 @property (nonatomic,strong) CAShapeLayer *bottomWaseLayer;
-@property (nonatomic,strong) CAShapeLayer *topWaseLayser;
 @property (nonatomic,strong) UILabel *progressLabel;
 @end
 @implementation ZRWaveLoadingView
@@ -61,18 +60,9 @@
     [self.layer addSublayer:shapLayer];
     self.bottomWaseLayer = shapLayer;
 }
-//上层波浪
-- (void)creatTopWase{
-    CAShapeLayer *shapLayer = [CAShapeLayer layer];
-    shapLayer.bounds = self.bounds;
-    shapLayer.position = self.center;
-    shapLayer.fillColor = [[UIColor orangeColor] colorWithAlphaComponent:0.5].CGColor;
-    [self.layer addSublayer:shapLayer];
-    self.topWaseLayser = shapLayer;
-}
 - (void)changeBottomInitialPhase{
     _initialPhase += 0.05;
-    
+
     if (_yOffset > (1 - _progress) * self.height) {
         _yOffset -= 1;
     }else if (_yOffset < 0){
@@ -82,14 +72,6 @@
     _progressLabel.text = [NSString stringWithFormat:@"%ld%%",(NSInteger)((self.height - _yOffset) / self.height * 100)];
     _bottomWaseLayer.path = [self wavePathWithYffset:_yOffset initialPhase:_initialPhase].CGPath;
     //_bottomWaseLayer.path = [self wavePathWithYffset:_yOffset initialPhase:_initialPhase amplitude:_amplitude].CGPath;
-    //_topWaseLayser.path = [self wavePathWithYffset:_yOffset - 5 initialPhase:_initialPhase + 5].CGPath;
-}
-//遮罩层
-- (CAShapeLayer *)maskLayer{
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.width / 2];
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.path = path.CGPath;
-    return maskLayer;
 }
 
 /**
@@ -128,6 +110,14 @@
     }
 }
 #pragma mark -
+//遮罩层
+- (CAShapeLayer *)maskLayer{
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.width / 2];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.path = path.CGPath;
+    return maskLayer;
+}
+
 - (UILabel *)progressLabel{
     if (!_progressLabel) {
         _progressLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 20)];
