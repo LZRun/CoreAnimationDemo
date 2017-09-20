@@ -17,14 +17,12 @@
  y轴的偏移量
  */
 @property (nonatomic,assign) CGFloat yOffset;
-/**
- x轴的偏移量,设置了会生成wavePath
- */
-@property (nonatomic,assign) CGFloat xOffset;
-
 ///波浪被限制范围
 @property (nonatomic) CGSize limitSize;
 ///波浪的高度
 @property (nonatomic) CGFloat waveHeight;
 - (instancetype)initWithLimitSize: (CGSize)limitSize waveHeight: (CGFloat)waveHeight;
+///x轴的偏移量,设置了会生成wavePath
+- (void)createPathWithXOffSet: (CGFloat)xOffset;
+
 @end
